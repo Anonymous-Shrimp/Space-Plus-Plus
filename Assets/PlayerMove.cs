@@ -77,7 +77,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.K) && ammo >= 0 && !ammoCooldown && !pause.isPaused)
         {
             GameObject clone1 = Instantiate(bullet, barrel.position, barrel.rotation);
-            ammo -= bulletAmmo;
+            ammo -= bulletAmmo / Time.deltaTime;
             ammoImage.fillAmount = ammo / 100;
             Destroy(clone1, 1);
             if (ammo <= 0)
@@ -100,7 +100,7 @@ public class PlayerMove : MonoBehaviour
             {
                 if (ammoCooldown)
                 {
-                    ammo += 0.5f;
+                    ammo += 0.5f / Time.deltaTime;
                 }
                 else
                 {

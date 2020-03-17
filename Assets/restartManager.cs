@@ -13,10 +13,10 @@ public class restartManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void quit()
+    public void menu()
     {
-        Debug.Log("Quiting Game...");
-        Application.Quit();
+        Debug.Log("Returning to menu...;");
+        SceneManager.LoadScene(0);
     }
 
    
